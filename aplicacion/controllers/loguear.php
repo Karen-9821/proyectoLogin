@@ -10,7 +10,7 @@ $tabla='usuario';
 
 if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser(),$tabla);
-    include_once 'INICIO.php';
+    include_once '../views/INICIO.php';
 
 }else if(isset($_POST['username']) && isset($_POST['password'])){
 
