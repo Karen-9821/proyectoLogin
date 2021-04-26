@@ -1,8 +1,8 @@
 <?php
-    include_once '../modelos/sesion_usuario.php';
+    include_once '../models/sesion_usuario.php';
 
     $userSession = new UserSession();
     $userSession->closeSession();
 
-    header("location: ../../public/index.php");
+    header("location: ../index.php");
 ?>
