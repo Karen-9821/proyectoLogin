@@ -3,8 +3,8 @@
 <head>
 <title>Página de Inicio</title>
 <!-- Custom Theme files -->
-<link rel="stylesheet" href="../public/CSS/bootstrap.min.css">
-<link href="../public/CSS/estilos.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../public/CSS/bootstrap.min.css">
+<link href="../../public/CSS/estilos.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,33 +25,30 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbarfixed-top navbar-dark bg-dark row">
                     <a class="navbar-brand" href="#">
-                        <img src="../public/img/Login.png" width="80" height="80" alt="">
+                        <img src="../../public/img/Login.png" width="80" height="80" alt="">
                     </a>
                 </nav>
             </div>
         </header>
-		<div class="header agile">
-			<div class="wrap">
-				<div class="login-main wthree">
-					<div class="login">
-					<?php 
-        				include_once '../controllers/loguear.php';
-    				?>
+		
 		<div class="header agile">
 			<div class="wrap">
 				<div style="margin-top: 100px;" class="login-main wthree">
 					<div class="login">
-						<h1>Bienvenido Alumno <?php echo $user->getNombre(); ?> </h1>
+						<?php 
+        					include_once '../controllers/loguear.php';
+    					?>
+						<h3>Bienvenido, <?php echo $user->getNombre(); ?> </h3>
 						<div class="clear"> </div>
 						<h4><a href="logout.php"> Cerrar sesión</a></h4>
-						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>			
     	
 			
-			<footer class="row" style="background-color: #4B525F; margin-top: 50px; margin-bottom: 200px; height: 130px" >
+		<footer class="row" style="background-color: #4B525F; margin-top: 50px; margin-bottom: 200px; height: 130px" >
 			<div class="col">
 				<div class="copy-rights w3l row">		 	
 					<p style="padding-top: 0px; text-align: center;">© <?php echo date("Y");?> <a href="http://obedalvarado.pw/" target="_blank">Taller de Investigacion II</a>  Todos los derechos reservados | Basado en el diseño de:  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>		 	
@@ -59,10 +56,10 @@
 			</div>
 		</footer>
 			
-			
-		</div>
+		
 	</div>
 </div>
+
 
  <!--copyrights start here-->
  <script src="js/jquery-3.4.1.min.js"></script>
