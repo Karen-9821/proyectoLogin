@@ -10,8 +10,8 @@ header("location: INICIO.php");
 <head>
 <title>Formulario de inicio de sesión con PHP & MySQL</title>
 <!-- Custom Theme files -->
-<link rel="stylesheet" href="../public/CSS/bootstrap.min.css">
-<link href="../public/CSS/estilos.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../public/CSS/bootstrap.min.css">
+<link href="../../public/CSS/estilos.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -33,7 +33,7 @@ header("location: INICIO.php");
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbarfixed-top navbar-dark bg-dark row">
                     <a class="navbar-brand" href="#">
-                        <img src="../public/img/Login.png" width="80" height="80" alt="">
+                        <img src="../../public/img/Login.png" width="80" height="80" alt="">
                     </a>
                 </nav>
             </div>
@@ -49,10 +49,6 @@ header("location: INICIO.php");
 							<input type="password" placeholder="Contraseña" name="password" required>
 							<input name="submit" type="submit" value="Ingresar">
 						</form>
-					<div class="clear"> </div>
-					<span><?php echo $error; ?></span>
-					</div>
-						
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'models/verificar_usuario.php';
+include_once '../models/verificar_usuario.php';
 include_once '../models/sesion_usuario.php';
 
 $userSession = new UserSession();
@@ -26,12 +26,12 @@ if(isset($_SESSION['user'])){
     }else{
 
         $errorLogin = "Nombre de usuario y/o password es incorrecto";
-        include_once '../iniciarSesion.php';
+        include_once 'iniciarSesion.php';
 
     }
 
 }else{
 
-    include_once '../iniciarSesion.php';
+    include_once 'iniciarSesion.php';
 }
 ?>
