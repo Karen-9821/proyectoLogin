@@ -1,5 +1,5 @@
 <?php 
-	include_once '../modelos/registrar.php';
+	include_once '../models/registrar.php';
 
 	$registro = new Registro();
 
