@@ -1,10 +1,3 @@
-<?php
-include('loguear.php'); // Includes Login Script
- 
-if(isset($_SESSION['login_user_sys'])){
-header("location: INICIO.php");
-}
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -43,7 +36,12 @@ header("location: INICIO.php");
 		<div class="login-main wthree">
 			<div class="login">
 			<h3>REGISTRO</h3>
-			<form action="#" method="post">
+			<form action="../controladores/funcion_registrar.php" method="post">
+				<?php
+            		if(isset($error_username)){
+                	echo $error_username;
+            		}
+       			?>
 				<input type="text" placeholder="Nombre" required="" name="nombre" required>
 				<input type="text" placeholder="Usuario" required="" name="username" required>
 				<input type="password" placeholder="Contraseña" name="password" required>
