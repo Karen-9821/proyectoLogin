@@ -1,9 +1,35 @@
 <?php
-    $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if(!$con){
-        die("imposible conectarse: ".mysqli_error($con));
+
+class DB{
+    private $host;
+    private $db;
+    private $user;
+    private $password;
+    
+
+    public function __construct(){
+        $this->host     = 'localhost';
+        $this->db       = 'login_bd';
+        $this->user     = 'root';
+        $this->password = "";
+        $this->charset  = 'utf8mb4';
     }
-    if (@mysqli_connect_errno()) {
-        die("Conexión falló: ".mysqli_connect_errno()." : ". mysqli_connect_error());
+
+    function connect(){
+    
+        try{
+            
+            $connection = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
+            $options = [
+                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES   => false,
+            ];
+            $pdo = new PDO($connection, $this->user, $this->password, $options);
+    
+            return $pdo;
+
+        }catch(PDOException $e){
+            print_r('Error connection: ' . $e->getMessage());
+        }   
     }
-?>
+}

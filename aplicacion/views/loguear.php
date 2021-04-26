@@ -1,34 +1,37 @@
 <?php
-session_start(); // Iniciando sesion
-$error=''; // Variable para almacenar el mensaje de error
-if (isset($_POST['submit'])) {
-if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username or Password is invalid";
-}
-else
-{
-// Define $username y $password
-$username=$_POST['username'];
-$password=$_POST['password'];
-// Estableciendo la conexion a la base de datos
-include("../config/db.php");//Contienen las variables, el servidor, usuario, contraseña y nombre  de la base de datos
-include("../config/conexion.php");//Contiene de conexion a la base de datos
- 
-// Para proteger de Inyecciones SQL 
-$username    = mysqli_real_escape_string($con,(strip_tags($username,ENT_QUOTES)));
-$password =  sha1($password);//Algoritmo de encriptacion de la contraseña http://php.net/manual/es/function.sha1.php
- 
-$sql = "SELECT usuarioProfesor, contraseñaProfesor FROM profesor WHERE usuarioProfesor = '$username' and contraseñaProfesor ='$password'";
-$query=mysqli_query($con,$sql);
-$counter=mysqli_num_rows($query);
-if ($counter==1){
-		$_SESSION['login_user_sys']=$username; // Iniciando la sesion
-		header("location: ../INICIO.php"); // Redireccionando a la pagina profile.php
-	
-	
-} else {
-$error = "El correo electrónico o la contraseña es inválida.";	
-}
-}
+
+include_once '../modelos/verificar_user.php';
+include_once '../modelos/sesion_usuario.php';
+
+$userSession = new UserSession();
+$user = new User();
+$tabla='usuario';
+
+
+if(isset($_SESSION['user'])){
+    $user->setUser($userSession->getCurrentUser(),$tabla);
+    include_once '../INICIO.php';
+
+}else if(isset($_POST['username']) && isset($_POST['password'])){
+
+    $userForm = $_POST['username'];
+    $passForm = $_POST['password'];
+
+    if($user->userExists($userForm, $passForm, $tabla)){
+        $userSession->setCurrentUser($userForm);
+        $user->setUser($userForm, $tabla);
+
+        include_once '../INICIO.php';
+        
+    }else{
+
+        $errorLogin = "Nombre de usuario y/o password es incorrecto";
+        include_once '../iniciarSesion.php';
+
+    }
+
+}else{
+
+    include_once '../iniciarSesion.php';
 }
 ?>
