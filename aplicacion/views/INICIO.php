@@ -25,7 +25,14 @@ include('session.php');
 	<div class="wrap">
 		<div class="login-main wthree">
 			<div class="login">
-			<h3>Bienvenid@ al sistema  <i><?php echo $login_session; ?></i></h3>
+			<?php 
+        		include_once "menu_alumno.php";
+        		include_once '../controladores/verificar_sesion_alumno.php';
+    		?>
+
+    <section>
+        <h1>Bienvenido Alumno <?php echo $user->getNombre(); ?> </h1>
+    </section>
 			
 			<div class="clear"> </div>
 				<h4><a href="logout.php"> Cerrar sesión</a></h4>
