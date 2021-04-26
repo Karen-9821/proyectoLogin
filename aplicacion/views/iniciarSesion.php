@@ -1,10 +1,3 @@
-<?php
-include('loguear.php'); // Includes Login Script
- 
-if(isset($_SESSION['login_user_sys'])){
-header("location: INICIO.php");
-}
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -44,7 +37,7 @@ header("location: INICIO.php");
 				<div class="login-main wthree" style="margin-top: 20px;margin-bottom: 0px;">
 					<div class="login">
 						<h3>Iniciar sesión</h3>
-						<form action="#" method="post">
+						<form action="../controllers/loguear.php" method="post">
 						<?php
 
             				if(isset($errorLogin)){
