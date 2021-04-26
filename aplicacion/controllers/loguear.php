@@ -21,12 +21,12 @@ if(isset($_SESSION['user'])){
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm, $tabla);
 
-        include_once 'INICIO.php';
+        include_once '../views/INICIO.php';
         
     }else{
 
         $errorLogin = "Nombre de usuario y/o password es incorrecto";
-        include_once 'iniciarSesion.php';
+        include_once '../views/iniciarSesion.php';
 
     }
 
