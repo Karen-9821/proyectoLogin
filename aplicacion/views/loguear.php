@@ -1,7 +1,7 @@
 <?php
 
-include_once '../modelos/verificar_user.php';
-include_once '../modelos/sesion_usuario.php';
+include_once 'models/verificar_usuario.php';
+include_once '../models/sesion_usuario.php';
 
 $userSession = new UserSession();
 $user = new User();

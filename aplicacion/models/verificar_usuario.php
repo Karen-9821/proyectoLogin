@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conexion.php';
+include_once '../views/conexionBD.php';
 
 class User extends DB{
 

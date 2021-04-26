@@ -2,7 +2,7 @@
 $host = "localhost";
 $usuario = "root";
 $clave = "";
-$bd = "sel_bd";
+$bd = "login_bd";
 
 $conexion = mysqli_connect($host,$usuario,$clave,$bd);
 
