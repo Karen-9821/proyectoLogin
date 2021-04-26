@@ -3,7 +3,7 @@
 
 	$registro = new Registro();
 
-	
+	if(isset($_POST['submit'])){
 		$tabla="usuario";
 		if ($registro->usernameExists($_POST['username'], $tabla)) {
 			$error_username = "Nombre de usuario ya existente";
@@ -12,4 +12,5 @@
 			$registro->registrar($_POST['nombre'], $_POST['username'], $_POST['password'], $tabla);
 			$registro_exitoso = "El registro se realizo correctamente";
 		}
+	}
  ?>
