@@ -26,8 +26,7 @@ include('session.php');
 		<div class="login-main wthree">
 			<div class="login">
 			<?php 
-        		include_once "menu_alumno.php";
-        		include_once '../controladores/verificar_sesion_alumno.php';
+        		include_once '../controllers/loguear.php';
     		?>
 
     <section>
