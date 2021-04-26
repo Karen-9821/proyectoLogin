@@ -40,10 +40,6 @@
             				<p class="center"><input type="submit" value="Iniciar Sesión" name = "iniciar"></p>
             				<p class="center"><input type="submit" value="Registrarse" name = "registrarse"></p>
         				</form>
-						<div class="clear"> 
-						</div>
-						<span><?php echo $error; ?>
-						</span>
 					</div>	
 				</div>
 			</div>
