@@ -40,7 +40,7 @@
     					?>
 						<h3>Bienvenido, <?php echo $user->getNombre(); ?> </h3>
 						<div class="clear"> </div>
-						<h4><a href="logout.php"> Cerrar sesión</a></h4>
+						<h4><a href="../controllers/logout.php"> Cerrar sesión</a></h4>
 					</div>
 					
 				</div>
