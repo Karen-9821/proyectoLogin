@@ -45,6 +45,13 @@ header("location: INICIO.php");
 					<div class="login">
 						<h3>Iniciar sesión</h3>
 						<form action="#" method="post">
+						<?php
+
+            				if(isset($errorLogin)){
+                				echo $errorLogin;
+            				}
+
+       ?>
 							<input type="text" placeholder="Usuario" required="" name="username" required>
 							<input type="password" placeholder="Contraseña" name="password" required>
 							<input name="submit" type="submit" value="Ingresar">
