@@ -36,7 +36,7 @@
 		<div class="login-main wthree">
 			<div class="login">
 			<h3>REGISTRO</h3>
-			<form action="../controladores/funcion_registrar.php" method="post">
+			<form action="../controllers/funcion_registrar.php" method="post">
 				<?php
             		if(isset($error_username)){
                 	echo $error_username;
